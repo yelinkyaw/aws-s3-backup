@@ -18,8 +18,12 @@ now = datetime.datetime.now()
 # Temp Archvie
 temp_directory = tempfile.gettempdir()
 
+# Get Config File Path
+config_directory = os.path.dirname(os.path.dirname(__file__)
+config_file = os.path.join(config_directory, 'backup.conf')
+
 # Get List to Archive
-lines = [line.strip() for line in open('backup.conf')]
+lines = [line.strip() for line in open(config_file)]
 
 # Starting Backup
 print 'Starting Backup'
